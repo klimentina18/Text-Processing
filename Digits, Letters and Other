@@ -1,0 +1,16 @@
+line = input()
+digits = ""
+letters = ""
+strings = ""
+
+for l in line:
+    if l.isdigit():
+        digits += l
+    elif l.isalpha():
+        letters += l
+    else:
+        strings += l
+
+print(digits)
+print(letters)
+print(strings)
