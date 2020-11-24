@@ -1,0 +1,6 @@
+line = input()
+while line != "end":
+    command = line
+    print(f"{command} = {command[::-1]}")
+
+    line = input()
