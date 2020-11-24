@@ -1,0 +1,6 @@
+one = input()
+two = input()
+
+while one in two:
+    two = two.replace(one, "")
+print(two)
