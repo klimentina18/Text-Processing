@@ -1,0 +1,17 @@
+strings = input().split("\\")
+
+for string in strings:
+    if "." in string:
+        a, b = string.split(".")
+        print(f"File name: {a}")
+        print(f"File extension: {b}")
+
+
+
+#strings = input().split("\\")
+
+#name = strings[-1].split(".")[0]
+#extension = strings[-1].split(".")[1]
+
+#print(f"File name: {name}")
+#print(f"File extension: {extension}")
