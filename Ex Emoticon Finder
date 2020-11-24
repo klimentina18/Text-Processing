@@ -1,0 +1,8 @@
+text = input()
+for letter in range(len(text)):
+    if text[letter] == ":":
+        print(f":{text[letter + 1]}")
+        
+        
+#text = input()
+#[print(f":{text[letter + 1]}") for letter in range(len(text)) if text[letter] == ":"]
