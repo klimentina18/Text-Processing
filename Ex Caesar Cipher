@@ -1,0 +1,12 @@
+text = input().split()
+result = 0
+total = ""
+total_result = ""
+for i in text:
+    for letter in i:
+        result = ord(letter) + 3
+        total = chr(result)
+        total_result += total
+    total_result += "#"
+
+print(total_result[:-1])
