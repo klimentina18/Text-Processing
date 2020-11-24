@@ -1,0 +1,49 @@
+tickets = input().split(", ")
+symbols = "#@$^"
+
+def repeat(strings,symbol):
+    if symbol not in strings:
+        return 0
+
+    maxx = 0
+    current =0
+
+    for i in range (len(strings)):
+        if strings[i] == symbol:
+            current += 1
+        else:
+            if maxx < current:
+                maxx = current
+            current = 0
+    return  max(maxx, current)
+
+for ticket in tickets:
+    ticket = ticket.strip()
+    if len(ticket) != 20:
+        print("invalid ticket")
+        continue
+
+    valid = False
+    half = len(ticket) // 2
+    left = ticket[:half]
+    right = ticket[half:]
+
+    for symbol in symbols:
+        if ticket.count(symbol) == 20:
+            valid = True
+            print(f'ticket "{ticket}" - {10}{symbol} Jackpot!')
+            break
+
+
+
+        half_left= repeat(left,symbol)
+        half_right = repeat(right,symbol)
+
+        if 6 <= half_left <=10 and 6 <= half_right <= 10:
+            valid = True
+            print(f'ticket "{ticket}" - {min(half_left, half_right)}{symbol}')
+            break
+
+
+    if not valid:
+        print(f'ticket "{ticket}" - no match')
