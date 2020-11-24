@@ -1,0 +1,20 @@
+line = input()
+result = ""
+total = ""
+
+for i in range(len(line)):
+    if line[i].isdigit():
+        num = line[i]
+        counter = i + 1
+        while counter < len(line) and line[counter].isdigit():
+            num += line[counter]
+            counter += 1
+        total += result.upper() * int(num)
+        result = ""
+
+    else:
+        result += line[i]
+
+print(f"Unique symbols used: {len(set(total))}")
+print(total)
+
