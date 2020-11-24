@@ -1,0 +1,29 @@
+line = input().split()
+sum = 0
+
+
+for el in line:
+  result = 0
+  letter_one = el[0]
+  letter_two = el[-1]
+  number = int(el[1:-1])
+
+  if letter_one.isupper():
+
+    letter_one = letter_one.lower()
+    position = ord(letter_one) - 96
+    result += number / position
+  else:
+    position = ord(letter_one) - 96
+    result += number * position
+
+  if letter_two.isupper():
+    letter_two = letter_two.lower()
+    position = ord(letter_two) - 96
+    result -= position
+  else:
+    position = ord(letter_two) - 96
+    result +=  position
+  sum += result
+
+print(f"{sum:.2f}")
