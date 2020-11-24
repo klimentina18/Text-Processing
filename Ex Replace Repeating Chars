@@ -1,0 +1,11 @@
+text = input()
+junk = ""
+sequence = ""
+unique = ""
+for letter in text:
+    if  letter != unique:
+        sequence += letter
+        unique = letter
+    else:
+        junk += letter
+print(sequence)
